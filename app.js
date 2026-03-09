@@ -8,6 +8,8 @@ const videoRoute = require('./routes/video');
 const bodyParser = require('body-parser');
 const commentRoute = require('./routes/comment')
 
+const cors = require('cors');
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 
