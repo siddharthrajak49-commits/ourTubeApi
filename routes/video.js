@@ -23,7 +23,7 @@ Router.get('/my-videos', checkAuth, async (req, res) => {
             'sbs online classes 123'
         );
 
-        const videos = await Video.find({ user_id: verifiedUser._id }).populate('user_id', 'channelName logoUrl , subscribers');
+       const videos = await Video.find({ user_id: verifiedUser._id }).populate('user_id','channelName logoUrl subscribers');
         res.status(200).json({
             videos: videos
         });
