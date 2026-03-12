@@ -268,4 +268,30 @@ Router.put('/views/:videoId',async(req,res)=>{
     }
 })
 
+// get all videos (for home page)
+
+Router.get('/all-videos', async (req,res)=>{
+
+    try{
+
+        const videos = await Video.find()
+        .populate('user_id','channelName logoUrl subscribers')
+
+        res.status(200).json({
+            videos:videos
+        })
+
+    }
+    catch(err){
+
+        console.log(err)
+
+        res.status(500).json({
+            error:"Error fetching videos"
+        })
+
+    }
+
+})
+
 module.exports = Router;
