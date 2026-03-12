@@ -267,8 +267,7 @@ Router.put('/views/:videoId',async(req,res)=>{
         })  
     }
 })
-
-// get all videos (for home page)
+// get all videos (home page)
 
 Router.get('/all-videos', async (req,res)=>{
 
